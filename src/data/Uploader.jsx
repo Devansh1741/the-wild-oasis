@@ -81,7 +81,7 @@ async function createBookings() {
       !isToday(new Date(booking.startDate))
     )
       status = "checked-in";
-
+    console.log(booking);
     return {
       ...booking,
       numNights,
