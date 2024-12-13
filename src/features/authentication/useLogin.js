@@ -11,8 +11,7 @@ export function useLogin() {
   const { mutate: login, isLoading } = useMutation({
     mutationFn: ({ email, password }) => LoginApi({ email, password }),
     onSuccess: (data) => {
-      queryClient.invalidateQueries(["user"]);
-      queryClient.setQueryData(["user", data.user]);
+      queryClient.setQueryData(["user"], data.user);
       navigate("/dashboard", { replace: true });
     },
 

@@ -116,7 +116,6 @@ const startDataDark = [
 
 function prepareData(startData, stays) {
   // A bit ugly code, but sometimes this is what it takes when working with real data 😅
-  // console.log(stays);
   function incArrayValue(arr, field) {
     return arr.map((obj) =>
       obj.duration === field ? { ...obj, value: obj.value + 1 } : obj
@@ -137,14 +136,12 @@ function prepareData(startData, stays) {
       return arr;
     }, startData)
     .filter((obj) => obj.value > 0);
-  console.log(data);
   return data;
 }
 
 function DurationChart({ confirmedStays }) {
   const { isDarkMode } = useDarkMode();
   const startData = isDarkMode ? startDataDark : startDataLight;
-  // console.log(confirmedStays);
   const data = prepareData(startData, confirmedStays);
 
   return (
