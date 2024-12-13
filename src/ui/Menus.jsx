@@ -89,6 +89,7 @@ function Toggle({ id }) {
   const { open, close, openId, setPosition } = useContext(MenuContext);
 
   function handleClick(e) {
+    e.stopPropagation();
     const rect = e.target.closest("button").getBoundingClientRect();
 
     setPosition({
