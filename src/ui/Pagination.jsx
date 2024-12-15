@@ -91,8 +91,7 @@ function Pagination({ count }) {
         <span>
           {currentPage === pageCount ? count : currentPage * PAGE_SIZE}
         </span>{" "}
-        of <span>{count}</span>
-        results
+        of <span>{count}</span> results
       </P>
 
       <Buttons>

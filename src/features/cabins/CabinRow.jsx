@@ -15,7 +15,8 @@ const Img = styled.img`
   aspect-ratio: 3 / 2;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.5) translateX(-7px);
+  transform: scale(1.5) translateX(-4px);
+  border: 2px solid var(--color-silver-100);
 `;
 
 const Cabin = styled.div`
