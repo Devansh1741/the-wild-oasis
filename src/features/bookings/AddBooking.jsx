@@ -1,21 +1,25 @@
+import toast from "react-hot-toast";
+import styled from "styled-components";
+import { differenceInDays } from "date-fns";
+
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
-import { useSettings } from "../settings/useSettings";
 import Button from "../../ui/Button";
 import Spinner from "../../ui/Spinner";
-import { useCabins } from "../cabins/useCabins";
-import styled from "styled-components";
-import { useGuests } from "./useGuests";
-import { differenceInDays } from "date-fns";
-import { useState } from "react";
 import Checkbox from "../../ui/Checkbox";
-import toast from "react-hot-toast";
-import { useCreateBooking } from "./useCreateBooking";
-import { useNavigate } from "react-router-dom";
-import { formatCurrency } from "../../utils/helpers";
 import Heading from "../../ui/Heading";
+
+import { useSettings } from "../settings/useSettings";
+import { useCabins } from "../cabins/useCabins";
+import { useGuests } from "./useGuests";
+import { useCreateBooking } from "./useCreateBooking";
+
+import { formatCurrency } from "../../utils/helpers";
 
 const StyledSelect = styled.select`
   border: 1px solid var(--color-grey-100);
@@ -43,8 +47,6 @@ function AddBooking() {
   const { isLoading: cabinsLoading, cabins } = useCabins();
   const { isLoading: guestsLoading, guests } = useGuests();
   const { createBooking, isCreating } = useCreateBooking();
-
-  const today = new Date().toISOString().split("T")[0];
 
   function toggleBreakfast() {
     if (optForBreakfast) setExtrasPrice(0);
@@ -241,7 +243,7 @@ function AddBooking() {
 
           <FormRow>
             <Button disabled={isCreating} onClick={toggleOpen}>
-              Edit
+              Edit Entries
             </Button>
             <Button disabled={isCreating}>Book Room</Button>
           </FormRow>
