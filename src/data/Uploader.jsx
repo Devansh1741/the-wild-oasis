@@ -135,7 +135,7 @@ function Uploader() {
         textAlign: "center",
         display: "flex",
         flexDirection: "column",
-        gap: "9px",
+        gap: "8px",
       }}
     >
       <h4>GENERATE SAMPLE DATA</h4>
